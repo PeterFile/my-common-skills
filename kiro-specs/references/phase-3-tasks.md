@@ -14,12 +14,14 @@ Convert approved design into actionable, test-driven implementation tasks.
 **Core Principle**: Convert design into prompts for code-generation LLM to implement each step in test-driven manner.
 
 **Focus**:
+
 - Incremental progress with early testing
 - Build on previous tasks - no orphaned code
 - ONLY tasks involving writing, modifying, or testing code
 - No big jumps in complexity
 
 **Exclude**:
+
 - User acceptance testing or feedback gathering
 - Deployment to production/staging
 - Performance metrics gathering
@@ -27,6 +29,39 @@ Convert approved design into actionable, test-driven implementation tasks.
 - User training or documentation creation
 - Business process changes
 - Marketing or communication activities
+
+### Pre-Task Verification Gate
+
+Before generating tasks, verify design feasibility to prevent AI hallucination:
+
+**Existence Check** (prevent referencing non-existent APIs):
+
+- [ ] **Dependencies**: Verify all libraries exist in package registry
+  - npm: `npm view <package> version`
+  - Go: `go list -m <module>@latest`
+  - Python: `pip index versions <package>`
+- [ ] **API Signatures**: Confirm method signatures against official docs
+  - Use MCP tools or direct doc retrieval when available
+
+**Feasibility Check** (prevent logically impossible architectures):
+
+- [ ] **Data Flow**: Can data actually flow as designed?
+- [ ] **Interface Compatibility**: Do interfaces align between components?
+- [ ] **Constraint Satisfaction**: Are all EARS requirements achievable?
+
+**Gate Decision**:
+
+- ✅ All checks pass → Proceed to task generation
+- ❌ Any check fails → Return to Design phase with specific findings
+
+**Bidirectional Feedback**: If verification reveals issues, update design.md with:
+
+```markdown
+## Verification Findings
+
+- [Issue description]
+- [Recommended fix]
+```
 
 ### Task Format
 
@@ -58,7 +93,7 @@ Create `.kiro/specs/{feature-name}/tasks.md` with:
     - Write User class with validation methods
     - Create unit tests for User model validation
     - _Requirements: 1.2_
-    - _writes: src/models/user.ts, src/models/__tests__/user.test.ts_
+    - _writes: src/models/user.ts, src/models/**tests**/user.test.ts_
 
 - [ ] 3. Create storage mechanism
   - [ ] 3.1 Implement database connection utilities
@@ -78,17 +113,20 @@ Create `.kiro/specs/{feature-name}/tasks.md` with:
 ### Task Requirements
 
 **Structure**:
+
 - Maximum two-level hierarchy (tasks and sub-tasks)
 - Use decimal notation for sub-tasks (1.1, 1.2, 2.1)
 - Each item must be a checkbox
 - Simple structure preferred
 
 **Each Task Must Include**:
+
 - Clear objective involving code (writing, modifying, testing)
 - Additional info as sub-bullets
 - Specific requirement references (granular sub-requirements, not just user stories)
 
 **Quality Standards**:
+
 - Discrete, manageable coding steps
 - Incremental builds on previous steps
 - Test-driven development prioritized

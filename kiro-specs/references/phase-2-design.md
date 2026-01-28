@@ -107,6 +107,7 @@ _For any_ [quantified inputs], [precondition clause], [system] SHALL [expected b
 **Documentation Approach:**
 
 Document error handling in whatever format best serves THIS system:
+
 - For APIs: Error codes, status codes, response structures
 - For frontends: User-facing messages, recovery UI, degraded states
 - For distributed systems: Actor behaviors, retry strategies, circuit breakers
@@ -129,11 +130,44 @@ The format should emerge from the system's nature, not from a template.
 - **Property-Based Tests**: Link to Correctness Properties
 - Performance testing considerations
 
+### 8. Security Considerations
+
+**First Principle**: Assume all inputs are hostile. Design defenses at every trust boundary.
+
+**Threat Modeling Checklist:**
+
+- [ ] **Input Validation**: All user-provided data sanitized and validated
+- [ ] **Authentication**: Identity verification mechanism specified
+- [ ] **Authorization**: Access control rules defined per resource/action
+- [ ] **Sensitive Data**: PII, credentials, tokens identified and protection strategy documented
+- [ ] **Secrets Management**: How secrets are stored, rotated, and accessed
+- [ ] **Rate Limiting**: Abuse prevention for exposed endpoints
+- [ ] **Audit Logging**: Security-relevant events captured for forensics
+
+**Trust Boundaries:**
+
+Document where data crosses trust boundaries and what validation occurs:
+
+```markdown
+| Boundary    | From → To           | Validation             |
+| ----------- | ------------------- | ---------------------- |
+| API Gateway | External → Internal | JWT verify, rate limit |
+| Database    | Service → DB        | Parameterized queries  |
+```
+
+**Quality Check:**
+
+- [ ] No secrets hardcoded in source
+- [ ] All external inputs validated before use
+- [ ] Principle of least privilege applied
+- [ ] Failure modes don't leak sensitive information
+
 ---
 
 ## Review & Iteration
 
 After creating/updating design:
+
 - Ask: "Does the design look good? If so, we can move on to the implementation plan."
 - Make modifications if user requests changes
 - Continue feedback-revision cycle until explicit approval
