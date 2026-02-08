@@ -1,0 +1,295 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "agent-state-schema.json",
+  "title": "Agent State",
+  "description": "Schema for AGENT_STATE.json used by multi-agent orchestrator",
+  "type": "object",
+  "required": [
+    "spec_path",
+    "session_name",
+    "tasks",
+    "review_findings",
+    "final_reports",
+    "blocked_items",
+    "pending_decisions",
+    "deferred_fixes",
+    "window_mapping"
+  ],
+  "properties": {
+    "spec_path": {
+      "type": "string",
+      "description": "Path to the spec directory"
+    },
+    "session_name": {
+      "type": "string",
+      "description": "Tmux session name"
+    },
+    "tasks": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/TaskResult" }
+    },
+    "review_findings": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/ReviewFinding" }
+    },
+    "final_reports": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/FinalReport" }
+    },
+    "blocked_items": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/BlockedItem" }
+    },
+    "pending_decisions": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/PendingDecision" }
+    },
+    "deferred_fixes": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/DeferredFix" }
+    },
+    "window_mapping": {
+      "type": "object",
+      "description": "Maps task_id to tmux window_id",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "definitions": {
+    "TaskResult": {
+      "type": "object",
+      "required": ["task_id", "status"],
+      "properties": {
+        "task_id": { "type": "string" },
+        "description": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": ["code", "ui", "review"]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "in_progress",
+            "pending_review",
+            "under_review",
+            "fix_required",
+            "final_review",
+            "completed",
+            "blocked"
+          ]
+        },
+        "owner_agent": {
+          "type": "string",
+          "enum": ["codex", "gemini", "codex-review"]
+        },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "criticality": {
+          "type": "string",
+          "enum": ["standard", "complex", "security-sensitive"]
+        },
+        "is_optional": { "type": "boolean" },
+        "parent_id": { 
+          "type": ["string", "null"],
+          "description": "Parent task ID if this is a subtask"
+        },
+        "subtasks": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of subtask IDs"
+        },
+        "details": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Task detail lines from tasks.md"
+        },
+        "writes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Files this task will write to (file manifest)"
+        },
+        "reads": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Files this task will read from (file manifest)"
+        },
+        "fix_attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "description": "Number of completed fix attempts"
+        },
+        "max_fix_attempts": {
+          "type": "integer",
+          "default": 3,
+          "description": "Maximum allowed fix attempts"
+        },
+        "escalated": {
+          "type": "boolean",
+          "description": "Whether task has been escalated to a different agent"
+        },
+        "escalated_at": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "Timestamp when task was escalated"
+        },
+        "original_agent": {
+          "type": ["string", "null"],
+          "description": "Original owner agent before escalation"
+        },
+        "last_review_severity": {
+          "type": ["string", "null"],
+          "enum": ["critical", "major", "minor", "none", null],
+          "description": "Severity from the most recent review"
+        },
+        "review_history": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ReviewHistoryEntry" },
+          "description": "History of review attempts for fix loop"
+        },
+        "blocked_reason": {
+          "type": ["string", "null"],
+          "description": "Reason why task is blocked"
+        },
+        "blocked_by": {
+          "type": ["string", "null"],
+          "description": "Task ID that is blocking this task"
+        },
+        "exit_code": { "type": "integer" },
+        "output": { "type": "string" },
+        "error": { "type": "string" },
+        "files_changed": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "coverage": { "type": "string" },
+        "coverage_num": { "type": "number" },
+        "tests_passed": { "type": "integer" },
+        "tests_failed": { "type": "integer" },
+        "window_id": { "type": "string" },
+        "pane_id": { "type": "string" },
+        "target_window": {
+          "type": "string",
+          "description": "Tmux window assignment provided by Codex"
+        },
+        "created_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "ReviewFinding": {
+      "type": "object",
+      "required": ["task_id", "reviewer", "severity", "summary", "created_at"],
+      "properties": {
+        "task_id": { "type": "string" },
+        "reviewer": { "type": "string" },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "major", "minor", "none"]
+        },
+        "summary": { "type": "string" },
+        "details": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "FinalReport": {
+      "type": "object",
+      "required": ["task_id", "overall_severity", "summary", "finding_count", "created_at"],
+      "properties": {
+        "task_id": { "type": "string" },
+        "overall_severity": {
+          "type": "string",
+          "enum": ["critical", "major", "minor", "none"]
+        },
+        "summary": { "type": "string" },
+        "finding_count": { "type": "integer" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "BlockedItem": {
+      "type": "object",
+      "required": ["task_id", "blocking_reason", "created_at"],
+      "properties": {
+        "task_id": { "type": "string" },
+        "blocking_reason": { "type": "string" },
+        "dependent_tasks": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of task IDs blocked by this item"
+        },
+        "required_resolution": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "ReviewHistoryEntry": {
+      "type": "object",
+      "required": ["attempt", "severity", "findings", "reviewed_at"],
+      "description": "Entry in the review history for fix loop tracking",
+      "properties": {
+        "attempt": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Attempt number (0 = initial review, 1-3 = fix attempts)"
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "major", "minor", "none"],
+          "description": "Overall severity of this review"
+        },
+        "findings": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ReviewFindingDetail" },
+          "description": "List of findings from this review"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when review was completed"
+        }
+      }
+    },
+    "ReviewFindingDetail": {
+      "type": "object",
+      "required": ["severity", "summary"],
+      "description": "Individual finding from a review",
+      "properties": {
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "major", "minor", "none"]
+        },
+        "summary": { "type": "string" },
+        "details": { "type": "string" }
+      }
+    },
+    "PendingDecision": {
+      "type": "object",
+      "required": ["id", "task_id", "context", "options", "created_at"],
+      "properties": {
+        "id": { "type": "string" },
+        "task_id": { "type": "string" },
+        "priority": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"],
+          "description": "Priority level of the decision"
+        },
+        "context": { "type": "string" },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "DeferredFix": {
+      "type": "object",
+      "required": ["task_id", "description", "severity", "created_at"],
+      "properties": {
+        "task_id": { "type": "string" },
+        "description": { "type": "string" },
+        "severity": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

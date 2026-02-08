@@ -1,11 +1,19 @@
 ---
 name: kiro-specs
-description: Spec-driven workflow for Kiro: create or update requirements (EARS), design docs, and implementation task lists, and execute tasks. Use when working with .kiro/specs/* or when asked to draft/iterate feature specs, design documents, or task plans. Triggered by "kiro" or references to .kiro/specs/ directory.
+description: Create a Kiro spec for a feature in .kiro/specs create/update feature spec/PRD/RFC—requirements, design doc, and implementation tasks checklist.Trigger on spec/specification/PRD/RFC/tech spec, requirements/user story/acceptance criteria/EARS, design doc/architecture, task breakdown/implementation plan/checklist; 需求/验收/设计/任务.
 ---
 
 # Kiro: Spec-Driven Development Workflow
 
 Transform ideas into comprehensive specifications, design documents, and actionable implementation plans.
+
+## When to use
+
+Use this skill when you want a Kiro-style spec pack under `.kiro/specs/`:
+
+1. requirements with EARS acceptance criteria,
+2. a design doc with architecture + correctness properties,
+3. an executable tasks checklist.
 
 ## Workflow
 
@@ -47,11 +55,11 @@ _For any_ [inputs], [precondition], [system] SHALL [behavior].
 
 ### Phase Outputs
 
-| Phase | Output File | Key Content |
-|-------|-------------|-------------|
-| Requirements | `requirements.md` | User stories + EARS ACs |
-| Design | `design.md` | Architecture + Interfaces + Properties |
-| Tasks | `tasks.md` | Checkbox task list |
+| Phase        | Output File       | Key Content                            |
+| ------------ | ----------------- | -------------------------------------- |
+| Requirements | `requirements.md` | User stories + EARS ACs                |
+| Design       | `design.md`       | Architecture + Interfaces + Properties |
+| Tasks        | `tasks.md`        | Checkbox task list                     |
 
 ## Workflow Diagram
 
@@ -103,6 +111,7 @@ fi
 ## Summary
 
 Kiro provides a structured, iterative approach to feature development:
+
 - Start with **requirements** (what to build)
 - Progress to **design** (how to build it)
 - Create **tasks** (implementation steps)
