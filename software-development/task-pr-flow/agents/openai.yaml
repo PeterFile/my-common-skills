@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task PR Flow"
+  short_description: "Task decomposition and PR flow guardrails"
+  default_prompt: "Use $task-pr-flow to split this feature into small PRs and define the CI/merge plan."

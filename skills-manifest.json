@@ -1,0 +1,560 @@
+[
+  {
+    "name": "antigravity-cli",
+    "category": "agent-orchestration",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 23,
+    "path": "agent-orchestration/antigravity-cli/",
+    "description_zh": "调用 Antigravity CLI 做编码、审查、研究和验证。"
+  },
+  {
+    "name": "autonomous-coding-agents",
+    "category": "agent-orchestration",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 180,
+    "path": "agent-orchestration/autonomous-coding-agents/",
+    "description_zh": "把编码任务分派给 Codex、Claude Code、OpenCode 或 Hermes 子代理。"
+  },
+  {
+    "name": "codex-prompt-optimizer",
+    "category": "agent-orchestration",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 6,
+    "path": "agent-orchestration/codex-prompt-optimizer/",
+    "description_zh": "把需求改写成更适合 Codex 执行的清晰任务提示。"
+  },
+  {
+    "name": "dense-multi-agent-worktree-delivery",
+    "category": "agent-orchestration",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 25,
+    "path": "agent-orchestration/dense-multi-agent-worktree-delivery/",
+    "description_zh": "用多个隔离 worktree 并行推进复杂软件交付。"
+  },
+  {
+    "name": "kanban-operations",
+    "category": "agent-orchestration",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 5,
+    "path": "agent-orchestration/kanban-operations/",
+    "description_zh": "操作 Hermes Kanban，把任务拆分、路由、跟踪和收口。"
+  },
+  {
+    "name": "playwright",
+    "category": "browser-automation",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "browser-automation/playwright/",
+    "description_zh": "用真实浏览器做页面操作、截图、数据提取和 UI 验证。"
+  },
+  {
+    "name": "playwright-interactive",
+    "category": "browser-automation",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "browser-automation/playwright-interactive/",
+    "description_zh": "用持久浏览器会话快速调试网页或 Electron 界面。"
+  },
+  {
+    "name": "vercel-deploy",
+    "category": "deployment-ops",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "deployment-ops/vercel-deploy/",
+    "description_zh": "部署应用到 Vercel，生成预览或线上部署。"
+  },
+  {
+    "name": "audio-music-media-production",
+    "category": "design-media",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 1,
+    "path": "design-media/audio-music-media-production/",
+    "description_zh": "生成或分析音乐、音频、频谱和相关媒体素材。"
+  },
+  {
+    "name": "baoyu-content-production",
+    "category": "design-media",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 1,
+    "path": "design-media/baoyu-content-production/",
+    "description_zh": "生成宝玉风格的中文知识图文、漫画和信息图。"
+  },
+  {
+    "name": "brand-guidelines",
+    "category": "design-media",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "design-media/brand-guidelines/",
+    "description_zh": "按 Anthropic 品牌规范处理颜色、字体和视觉风格。"
+  },
+  {
+    "name": "canvas-design",
+    "category": "design-media",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "design-media/canvas-design/",
+    "description_zh": "生成海报、静态视觉图、PNG/PDF 设计稿。"
+  },
+  {
+    "name": "comfyui",
+    "category": "design-media",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 2,
+    "path": "design-media/comfyui/",
+    "description_zh": "用 ComfyUI 生成或处理图片、视频和音频。"
+  },
+  {
+    "name": "creative-visual-production",
+    "category": "design-media",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 1,
+    "path": "design-media/creative-visual-production/",
+    "description_zh": "制作图表、原型、视觉参考、像素图、动画和设计规格。"
+  },
+  {
+    "name": "doc-coauthoring",
+    "category": "docs-writing",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "docs-writing/doc-coauthoring/",
+    "description_zh": "协作撰写文档、技术方案、规格和决策记录。"
+  },
+  {
+    "name": "docs-write",
+    "category": "docs-writing",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "docs-writing/docs-write/",
+    "description_zh": "按清晰、面向用户的风格写 Markdown/MDX 文档。"
+  },
+  {
+    "name": "domain-modeling",
+    "category": "docs-writing",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "docs-writing/domain-modeling/",
+    "description_zh": "梳理领域术语、核心概念和架构决策。"
+  },
+  {
+    "name": "humanizer",
+    "category": "docs-writing",
+    "sources": "codex, hermes",
+    "selected_source": "codex",
+    "hermes_use_count": 39,
+    "path": "docs-writing/humanizer/",
+    "description_zh": "去掉 AI 味，让文字更像真人写作。"
+  },
+  {
+    "name": "obsidian-markdown",
+    "category": "docs-writing",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 2,
+    "path": "docs-writing/obsidian-markdown/",
+    "description_zh": "编辑 Obsidian Markdown，包括双链、嵌入、callout 和 frontmatter。"
+  },
+  {
+    "name": "cache-components",
+    "category": "frontend-ui",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/cache-components/",
+    "description_zh": "处理 Next.js Cache Components、缓存生命周期和局部预渲染。"
+  },
+  {
+    "name": "frontend-design",
+    "category": "frontend-ui",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/frontend-design/",
+    "description_zh": "设计和实现高质量前端页面、组件和应用界面。"
+  },
+  {
+    "name": "gsap-core",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": 2,
+    "path": "frontend-ui/gsap-core/",
+    "description_zh": "使用 GSAP 基础动画：补间、缓动、透明度、位移和响应式动画。"
+  },
+  {
+    "name": "gsap-frameworks",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/gsap-frameworks/",
+    "description_zh": "在 Vue、Svelte、Nuxt、SvelteKit 等框架里正确接入 GSAP。"
+  },
+  {
+    "name": "gsap-performance",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": 2,
+    "path": "frontend-ui/gsap-performance/",
+    "description_zh": "优化 GSAP 动画性能，减少卡顿、布局抖动和帧率问题。"
+  },
+  {
+    "name": "gsap-plugins",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/gsap-plugins/",
+    "description_zh": "使用 GSAP 插件：拖拽、Flip、SplitText、SVG、滚动平滑等。"
+  },
+  {
+    "name": "gsap-react",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": 2,
+    "path": "frontend-ui/gsap-react/",
+    "description_zh": "在 React/Next.js 中使用 GSAP，并处理 refs、清理和 SSR。"
+  },
+  {
+    "name": "gsap-scrolltrigger",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/gsap-scrolltrigger/",
+    "description_zh": "制作滚动触发动画、固定区块、scrub 和视差效果。"
+  },
+  {
+    "name": "gsap-timeline",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/gsap-timeline/",
+    "description_zh": "用时间线编排多步骤动画、标签、嵌套和播放控制。"
+  },
+  {
+    "name": "gsap-utils",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/gsap-utils/",
+    "description_zh": "使用 GSAP 工具函数做范围映射、随机、吸附、数组包装等。"
+  },
+  {
+    "name": "ui-ux-pro-max",
+    "category": "frontend-ui",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": 9,
+    "path": "frontend-ui/ui-ux-pro-max/",
+    "description_zh": "做 UI/UX 方案、界面改进、组件设计和视觉审查。"
+  },
+  {
+    "name": "vercel-react-best-practices",
+    "category": "frontend-ui",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/vercel-react-best-practices/",
+    "description_zh": "按 Vercel 工程实践优化 React/Next.js 性能。"
+  },
+  {
+    "name": "web-design-guidelines",
+    "category": "frontend-ui",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "frontend-ui/web-design-guidelines/",
+    "description_zh": "审查网页 UI、可访问性、布局和交互质量。"
+  },
+  {
+    "name": "game-engine",
+    "category": "game-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "game-development/game-engine/",
+    "description_zh": "构建网页游戏、Canvas/WebGL 渲染、碰撞和游戏循环。"
+  },
+  {
+    "name": "generate2dmap",
+    "category": "game-development",
+    "sources": "codex, hermes",
+    "selected_source": "codex",
+    "hermes_use_count": null,
+    "path": "game-development/generate2dmap/",
+    "description_zh": "生成 2D 游戏地图、战斗场景、tilemap 和碰撞区域。"
+  },
+  {
+    "name": "generate2dsprite",
+    "category": "game-development",
+    "sources": "codex, hermes",
+    "selected_source": "codex",
+    "hermes_use_count": null,
+    "path": "game-development/generate2dsprite/",
+    "description_zh": "生成和处理 2D 精灵、角色、道具、特效和透明动画帧。"
+  },
+  {
+    "name": "apple-automation",
+    "category": "productivity-automation",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 2,
+    "path": "productivity-automation/apple-automation/",
+    "description_zh": "自动化 macOS 的 Notes、Reminders、Messages、Find My 等应用。"
+  },
+  {
+    "name": "communication-platform-workflows",
+    "category": "productivity-automation",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 11,
+    "path": "productivity-automation/communication-platform-workflows/",
+    "description_zh": "操作邮件、X/Twitter、元宝群聊等通信平台。"
+  },
+  {
+    "name": "json-canvas",
+    "category": "productivity-automation",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 3,
+    "path": "productivity-automation/json-canvas/",
+    "description_zh": "创建和编辑 JSON Canvas 图谱、节点和连线。"
+  },
+  {
+    "name": "linear",
+    "category": "productivity-automation",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "productivity-automation/linear/",
+    "description_zh": "读取、创建和更新 Linear issue、项目和团队工作流。"
+  },
+  {
+    "name": "productivity-api-workflows",
+    "category": "productivity-automation",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 6,
+    "path": "productivity-automation/productivity-api-workflows/",
+    "description_zh": "操作 Airtable、Google Workspace、Linear、Notion、PPT、PDF 等办公工具。"
+  },
+  {
+    "name": "project-canvas-os",
+    "category": "productivity-automation",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 20,
+    "path": "productivity-automation/project-canvas-os/",
+    "description_zh": "用项目文档和 Obsidian Canvas 管理项目状态和证据。"
+  },
+  {
+    "name": "smart-home-operations",
+    "category": "productivity-automation",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 1,
+    "path": "productivity-automation/smart-home-operations/",
+    "description_zh": "控制智能家居设备、灯光、场景和本地 IoT 网关。"
+  },
+  {
+    "name": "market-sizing-analysis",
+    "category": "research-market",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "research-market/market-sizing-analysis/",
+    "description_zh": "计算 TAM、SAM、SOM 和市场机会规模。"
+  },
+  {
+    "name": "research-intelligence-workflows",
+    "category": "research-market",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 6,
+    "path": "research-market/research-intelligence-workflows/",
+    "description_zh": "做资料搜集、论文检索、资讯监控和研究综述。"
+  },
+  {
+    "name": "security-best-practices",
+    "category": "security",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "security/security-best-practices/",
+    "description_zh": "做 Python、JavaScript/TypeScript、Go 的安全最佳实践审查。"
+  },
+  {
+    "name": "security-ownership-map",
+    "category": "security",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "security/security-ownership-map/",
+    "description_zh": "基于 git 历史分析安全敏感代码归属和 bus factor。"
+  },
+  {
+    "name": "security-threat-model",
+    "category": "security",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "security/security-threat-model/",
+    "description_zh": "为代码库建立威胁模型、资产、边界和缓解措施。"
+  },
+  {
+    "name": "codebase-design",
+    "category": "software-development",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": 3,
+    "path": "software-development/codebase-design/",
+    "description_zh": "分析模块边界，设计更深、更稳、更好测的代码接口。"
+  },
+  {
+    "name": "commit-assistant",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/commit-assistant/",
+    "description_zh": "整理 commit、PR 描述和发布说明。"
+  },
+  {
+    "name": "gh-address-comments",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/gh-address-comments/",
+    "description_zh": "处理 GitHub PR review 或 issue 评论里的修改要求。"
+  },
+  {
+    "name": "gh-fix-ci",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/gh-fix-ci/",
+    "description_zh": "排查 GitHub Actions CI 失败并制定修复。"
+  },
+  {
+    "name": "github-workflows",
+    "category": "software-development",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 347,
+    "path": "software-development/github-workflows/",
+    "description_zh": "GitHub 全流程操作：仓库、分支、issue、PR、review、CI 和 release。"
+  },
+  {
+    "name": "grilling",
+    "category": "software-development",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": 1,
+    "path": "software-development/grilling/",
+    "description_zh": "严格追问并压力测试计划、设计和技术方案。"
+  },
+  {
+    "name": "improve-codebase-architecture",
+    "category": "software-development",
+    "sources": "agents, hermes",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/improve-codebase-architecture/",
+    "description_zh": "扫描代码库，找出可深化模块和架构改进点。"
+  },
+  {
+    "name": "living-documentation",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/living-documentation/",
+    "description_zh": "代码行为变化后同步 .kiro/specs 需求和设计文档。"
+  },
+  {
+    "name": "oss-issue-scout",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/oss-issue-scout/",
+    "description_zh": "分析开源仓库，挑选更适合贡献的 issue。"
+  },
+  {
+    "name": "pnpm",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/pnpm/",
+    "description_zh": "处理 pnpm 工作区、依赖、catalog、patch 和 override。"
+  },
+  {
+    "name": "software-delivery-workflows",
+    "category": "software-development",
+    "sources": "hermes",
+    "selected_source": "hermes",
+    "hermes_use_count": 377,
+    "path": "software-development/software-delivery-workflows/",
+    "description_zh": "软件交付总流程：规划、实现、调试、测试、评审和发布。"
+  },
+  {
+    "name": "task-pr-flow",
+    "category": "software-development",
+    "sources": "codex, hermes",
+    "selected_source": "codex",
+    "hermes_use_count": 102,
+    "path": "software-development/task-pr-flow/",
+    "description_zh": "把功能拆成小任务、小分支和可合并的 PR 队列。"
+  },
+  {
+    "name": "test-driven-development",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/test-driven-development/",
+    "description_zh": "按红绿重构流程先写失败测试，再实现功能或修 bug。"
+  },
+  {
+    "name": "turborepo",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/turborepo/",
+    "description_zh": "处理 Turborepo monorepo、任务管线、缓存和 CI 优化。"
+  },
+  {
+    "name": "typescript-write",
+    "category": "software-development",
+    "sources": "agents",
+    "selected_source": "agents",
+    "hermes_use_count": null,
+    "path": "software-development/typescript-write/",
+    "description_zh": "编写或重构 TypeScript/JavaScript，保持本地代码风格。"
+  }
+]

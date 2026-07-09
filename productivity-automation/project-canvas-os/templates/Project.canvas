@@ -1,0 +1,142 @@
+{
+  "nodes": [
+    {
+      "id": "0000000000000001",
+      "type": "group",
+      "x": 0,
+      "y": 0,
+      "width": 720,
+      "height": 360,
+      "label": "① Goal",
+      "color": "6"
+    },
+    {
+      "id": "0000000000000002",
+      "type": "group",
+      "x": 760,
+      "y": 0,
+      "width": 920,
+      "height": 360,
+      "label": "② System Structure",
+      "color": "5"
+    },
+    {
+      "id": "0000000000000003",
+      "type": "group",
+      "x": 0,
+      "y": 420,
+      "width": 1680,
+      "height": 420,
+      "label": "③ Current Work",
+      "color": "3"
+    },
+    {
+      "id": "0000000000000004",
+      "type": "group",
+      "x": 0,
+      "y": 900,
+      "width": 820,
+      "height": 420,
+      "label": "④ Evidence",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000005",
+      "type": "group",
+      "x": 860,
+      "y": 900,
+      "width": 820,
+      "height": 420,
+      "label": "⑤ Risks & Decisions",
+      "color": "1"
+    },
+    {
+      "id": "1000000000000001",
+      "type": "text",
+      "x": 40,
+      "y": 60,
+      "width": 620,
+      "height": 220,
+      "color": "6",
+      "text": "Goal: <project goal>\nSuccess: <observable success condition>\nConstraints: <hard constraints>"
+    },
+    {
+      "id": "1000000000000002",
+      "type": "text",
+      "x": 800,
+      "y": 60,
+      "width": 380,
+      "height": 200,
+      "color": "5",
+      "text": "Module: <core module>\nRole: <what it owns>\nInputs: <sources>\nOutputs: <interfaces>"
+    },
+    {
+      "id": "1000000000000003",
+      "type": "text",
+      "x": 40,
+      "y": 500,
+      "width": 380,
+      "height": 220,
+      "color": "6",
+      "text": "Task: <first task>\nState: Proposed\nOwner: Human|Hermes|Codex\nDepends: none\nEvidence: none\nRisk: none"
+    },
+    {
+      "id": "1000000000000004",
+      "type": "text",
+      "x": 40,
+      "y": 980,
+      "width": 420,
+      "height": 220,
+      "color": "4",
+      "text": "Evidence: <evidence name>\ncommit: none\ntest: none\nbuild: none\nmanual: none\nartifact: none"
+    },
+    {
+      "id": "1000000000000005",
+      "type": "text",
+      "x": 900,
+      "y": 980,
+      "width": 420,
+      "height": 220,
+      "color": "1",
+      "text": "Risk: <risk or unknown>\nImpact: <what breaks>\nMitigation: <next check>\nStatus: Open"
+    }
+  ],
+  "edges": [
+    {
+      "id": "2000000000000001",
+      "fromNode": "1000000000000001",
+      "fromSide": "right",
+      "toNode": "1000000000000002",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "defines"
+    },
+    {
+      "id": "2000000000000002",
+      "fromNode": "1000000000000002",
+      "fromSide": "bottom",
+      "toNode": "1000000000000003",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "enables"
+    },
+    {
+      "id": "2000000000000003",
+      "fromNode": "1000000000000003",
+      "fromSide": "bottom",
+      "toNode": "1000000000000004",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "requires evidence"
+    },
+    {
+      "id": "2000000000000004",
+      "fromNode": "1000000000000005",
+      "fromSide": "left",
+      "toNode": "1000000000000003",
+      "toSide": "right",
+      "toEnd": "arrow",
+      "label": "may block"
+    }
+  ]
+}

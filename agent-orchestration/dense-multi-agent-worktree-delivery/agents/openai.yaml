@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dense Multi-Agent Worktree Delivery"
+  short_description: "Scoreable multi-agent lanes with isolated worktrees, stacked PRs, adaptive rate control, and truthful closeout."
+  default_prompt: "Use $dense-multi-agent-worktree-delivery to select the correct delivery mode, verify live repo/PR/controller state, plan scoreable lanes, let Hermes choose the highest safe development rate from live evidence, run Codex worktree agents, and close out with verified Slack/Linear/GitHub state."
